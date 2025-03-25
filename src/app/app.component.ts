@@ -3,9 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    standalone: false
 })
 export class AppComponent {
   title = 'prodavnica-kucnih-ljubimaca2';

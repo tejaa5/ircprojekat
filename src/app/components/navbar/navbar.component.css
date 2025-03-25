@@ -1,3 +1,46 @@
-.navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.navbar-brand {
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 29px;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav > li {
+  margin-left: 10px;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .navbar-brand {
+  flex: 0;
+}
+
+
+
+

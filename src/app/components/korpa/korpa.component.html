@@ -1,1 +1,33 @@
-<p>korpa works!</p>
+<div class="container mt-4">
+  <h2 class="text-center">Vaša Korpa</h2>
+
+  <div class="mb-3">
+    <input [(ngModel)]="pretraga" (input)="pretrazi()" class="form-control" placeholder="Pretraži rezervacije" />
+  </div>
+
+  <div *ngIf="rezervacije.length === 0" class="text-center">Nemate nijednu rezervaciju u korpi.</div>
+
+  <div *ngFor="let rezervacija of rezervacije; let i = index" class="mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ rezervacija.naziv }}</h5>
+        <p><strong>Opis:</strong> {{ rezervacija.opis }}</p>
+        <p><strong>Vrsta:</strong> {{ rezervacija.vrsta }}</p>
+        <p><strong>Status:</strong> {{ rezervacija.status }}</p>
+        <p><strong>Cena:</strong> {{ rezervacija.cena }} RSD</p>
+
+        <!-- Ako je status 'preuzeto', korisnik može da obriše rezervaciju -->
+        <button *ngIf="rezervacija.status === 'preuzeto'" (click)="obrisiRezervaciju(i)" class="btn btn-danger">Obriši</button>
+
+        <!-- Ako je status 'u toku' ili 'otkazano', korisnik može da menja status -->
+        <button *ngIf="rezervacija.status !== 'preuzeto'" (click)="modifikujStatus(i, 'u toku')" class="btn btn-warning">Kupi</button>
+        <button *ngIf="rezervacija.status !== 'preuzeto'" (click)="modifikujStatus(i, 'otkazano')" class="btn btn-secondary">Otkaži</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <h4>Ukupna cena: {{ ukupnaCena }} RSD</h4>
+  </div>
+</div>
+

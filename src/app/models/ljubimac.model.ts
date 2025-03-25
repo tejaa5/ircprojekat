@@ -7,5 +7,6 @@ export interface Ljubimac {
   velicina: string; // npr. mala, srednja, velika
   poreklo: string; // Poreklo ljubimca
   cena: number; // Cena ljubimca
-  recenzije: { korisnik: string; ocena: number; komentar: string }[]; // Recenzije korisnika
+  recenzije: { korisnik: string; ocena: number; komentar: string }[];
+  slika: string;
 }

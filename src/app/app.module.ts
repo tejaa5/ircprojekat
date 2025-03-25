@@ -6,10 +6,12 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
 import {HomeComponent} from "./components/home/home.component";
 import {KorpaComponent} from "./components/korpa/korpa.component";
 import {PrijavaComponent} from "./components/prijava/prijava.component";
-import {RegistracijaComponent} from "./components/registracija/registracija.component";
 import {LjubimciService} from "./services/ljubimci.service";
 import {FormsModule} from "@angular/forms";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { MatIconModule } from '@angular/material/icon';
+import {NgOptimizedImage} from "@angular/common";
+import {RegistracijaComponent} from "./components/registracija/registracija.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    NgOptimizedImage
+
 
   ],
   providers: [LjubimciService],

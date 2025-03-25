@@ -7,6 +7,7 @@ import {KorpaComponent} from "./components/korpa/korpa.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/prijava', pathMatch: 'full' },
   { path: 'registracija', component: RegistracijaComponent },
   { path: 'prijava', component: PrijavaComponent },
   { path: 'korpa', component: KorpaComponent }

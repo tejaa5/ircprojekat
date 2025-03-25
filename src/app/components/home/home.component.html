@@ -1,50 +1,34 @@
-<div class="container mt-5">
-  <h2>Pretraga ljubimaca</h2>
-  <form (ngSubmit)="pretrazi()">
-    <div class="form-group">
-      <label for="ime">Ime</label>
-      <input type="text" class="form-control" id="ime" [(ngModel)]="kriterijumi.ime" name="ime">
+<div class="container">
+  <h2 class="text-center mb-4">Dostupni ljubimci</h2>
+  <div class="row">
+    <div *ngFor="let ljubimac of ljubimci" class="col-md-4">
+      <div class="card">
+        <img [src]="ljubimac.slika" class="card-img-top" alt="Ljubimac" style="height: 300px;  object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{ ljubimac.ime }}</h5>
+          <p class="card-text">{{ ljubimac.opis }}</p>
+          <p><strong>Vrsta:</strong> {{ ljubimac.vrsta }}</p>
+          <p><strong>Starost:</strong> {{ ljubimac.starost }} godina</p>
+          <p><strong>Veličina:</strong> {{ ljubimac.velicina }}</p>
+          <p><strong>Poreklo:</strong> {{ ljubimac.poreklo }}</p>
+          <p><strong>Cena:</strong> {{ ljubimac.cena }} RSD</p>
+          <div>
+            <strong>Recenzije:</strong>
+            <ul>
+              <li *ngFor="let recenzija of ljubimac.recenzije">
+                <strong>{{ recenzija.korisnik }}:</strong> {{ recenzija.ocena }}★ - {{ recenzija.komentar }}
+              </li>
+            </ul>
+            <button class="btn btn-danger" (click)="rezervisiLjubimac(ljubimac)">Rezerviši</button>
+            <div *ngIf="!isLoggedIn()" class="alert alert-warning mt-2">
+             
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="opis">Opis</label>
-      <input type="text" class="form-control" id="opis" [(ngModel)]="kriterijumi.opis" name="opis">
-    </div>
-    <div class="form-group">
-      <label for="vrsta">Vrsta</label>
-      <input type="text" class="form-control" id="vrsta" [(ngModel)]="kriterijumi.vrsta" name="vrsta">
-    </div>
-    <div class="form-group">
-      <label for="starost">Starost</label>
-      <input type="number" class="form-control" id="starost" [(ngModel)]="kriterijumi.starost" name="starost">
-    </div>
-    <div class="form-group">
-      <label for="velicina">Velicina</label>
-      <input type="text" class="form-control" id="velicina" [(ngModel)]="kriterijumi.velicina" name="velicina">
-    </div>
-    <div class="form-group">
-      <label for="poreklo">Poreklo</label>
-      <input type="text" class="form-control" id="poreklo" [(ngModel)]="kriterijumi.poreklo" name="poreklo">
-    </div>
-    <div class="form-group">
-      <label for="cena">Cena</label>
-      <input type="number" class="form-control" id="cena" [(ngModel)]="kriterijumi.cena" name="cena">
-    </div>
-    <div class="form-group">
-      <label for="recenzije">Recenzije korisnika</label>
-      <input type="text" class="form-control" id="recenzije" [(ngModel)]="kriterijumi.recenzije" name="recenzije">
-    </div>
-    <button type="submit" class="btn btn-primary mt-3">Pretraži</button>
-  </form>
-
-  <h3 class="mt-5">Rezultati pretrage</h3>
-  <ul class="list-group">
-    <li *ngFor="let ljubimac of ljubimci" class="list-group-item">
-      <strong>{{ ljubimac.ime }}</strong> - {{ ljubimac.vrsta }}<br>
-      {{ ljubimac.opis }}<br>
-      Cena: {{ ljubimac.cena }} RSD<br>
-      <button class="btn btn-info mt-2">Pogledaj detalje</button>
-    </li>
-  </ul>
+  </div>
 </div>
+
 
 

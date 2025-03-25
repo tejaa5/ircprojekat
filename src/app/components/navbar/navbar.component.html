@@ -1,32 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Prodavnica Ljubimaca</a>
+
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/">Početna</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/registracija">Registracija</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/prijava">Prijava</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/korpa">Korpa</a>
-      </li>
-      <!-- Pretraga -->
-      <li class="nav-item">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Pet Shop <mat-icon>cruelty_free</mat-icon></a>
+
+
+      <div class="mx-auto">
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Pretraži ljubimce" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Pretraži</button>
+          <input class="form-control me-2" type="search" placeholder="Pretraži" aria-label="Search">
+          <button class="btn-outline-danger btn " type="submit"><mat-icon>search</mat-icon></button>
         </form>
-      </li>
-    </ul>
+      </div>
+
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"> <mat-icon>home</mat-icon></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/registracija"> <mat-icon>person_add</mat-icon></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/prijava"> <mat-icon>person</mat-icon></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/korpa"> <mat-icon>shopping_cart</mat-icon></a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
+
 
 
 
